@@ -1,0 +1,66 @@
+{
+    "projectId": "6329de9e365e2d7e8440",
+    "projectName": "Vocab",
+    "functions": [
+        {
+            "$id": "63371d297ab5963632bd",
+            "name": "Update Word Count on Language",
+            "runtime": "deno-1.21",
+            "path": "functions/Update Word Count on Language",
+            "entrypoint": "src/mod.ts",
+            "ignore": [],
+            "execute": [
+                "any"
+            ],
+            "events": [
+                "databases.632a31e4b3c3abd8c82e.collections.6335c25f2911b6f34739.documents.*.create"
+            ],
+            "schedule": "",
+            "timeout": 15
+        },
+        {
+            "$id": "6337377522a1100b0413",
+            "name": "Update Count while deleting Word",
+            "runtime": "deno-1.21",
+            "path": "functions/Update Count while deleting Word",
+            "entrypoint": "src/mod.ts",
+            "ignore": [],
+            "execute": [
+                "any"
+            ],
+            "events": [
+                "databases.632a31e4b3c3abd8c82e.collections.6335c25f2911b6f34739.documents.*.delete"
+            ],
+            "schedule": "",
+            "timeout": 15
+        },
+        {
+            "$id": "63552d398cebc305d479",
+            "name": "Update Word",
+            "runtime": "deno-1.21",
+            "path": "functions/Update Word",
+            "entrypoint": "src/mod.ts",
+            "ignore": [],
+            "execute": [
+                "users"
+            ],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
+        },
+        {
+            "$id": "63555ebf98642bebb444",
+            "name": "Import Words",
+            "runtime": "deno-1.21",
+            "path": "functions/Import Words",
+            "entrypoint": "src/mod.ts",
+            "ignore": [],
+            "execute": [
+                "any"
+            ],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
+        }
+    ]
+}
