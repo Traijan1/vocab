@@ -37,6 +37,8 @@ class _WordFormState extends State<WordForm> {
     secondReadingController.text = widget.word.secondReading ?? "";
     wordTypeController.text = widget.word.type ?? "";
     difficultyController.text = widget.word.difficulty ?? "";
+
+    widget.languages.then((data) => checkForSecondReading(data));
   }
 
   @override
@@ -50,7 +52,8 @@ class _WordFormState extends State<WordForm> {
   void checkForSecondReading(List<Language> languages) {
     for (Language lang in languages) {
       if (lang.languageId == dropdownValue) {
-        hasSecondReading = !lang.usesLatinAlphabet;
+        setState(() => hasSecondReading = !lang.usesLatinAlphabet);
+
         break;
       }
     }
@@ -72,7 +75,6 @@ class _WordFormState extends State<WordForm> {
           if (dropdownValue.isEmpty) {
             dropdownValue = data![0].languageId;
             widget.word.languageId = dropdownValue;
-            checkForSecondReading(data);
           }
 
           var spacer = const TableRow(
